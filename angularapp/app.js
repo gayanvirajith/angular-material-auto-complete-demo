@@ -43,19 +43,8 @@ app.controller('DemoCtrl',['$scope', '$timeout', '$q', 'SearchService', function
    */
   function querySearch (query) {
 
-    var loadItems = [];
-    SearchService.get(query).success(function(data) {
-      loadItems = data.data;
-
-      var newLoad = loadItems.map(function(obj){
-        return {
-          value: obj.name.toLowerCase() + ' ' + obj.location.toLowerCase() + ' ' + obj.color.toLowerCase(),
-          display: obj.name
-        };
-      });
-      self.states = newLoad;
-    });
-
+    // Get results based on query text
+   loadAll(query);
     var results = query ? self.states.filter( createFilterFor(query) ) : [],
         deferred;
     if (self.simulateQuery) {
@@ -67,21 +56,18 @@ app.controller('DemoCtrl',['$scope', '$timeout', '$q', 'SearchService', function
     }
   }
   /**
-   * Build `states` list of key/value pairs
+   * Build suggested people info array based of query text
    */
-  function loadAll() {
-    var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-              Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-              Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-              Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-              North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-              South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-              Wisconsin, Wyoming';
-    return allStates.split(/, +/g).map( function (state) {
-      return {
-        value: state.toLowerCase(),
-        display: state
-      };
+  function loadAll(query) {
+    SearchService.get(query).success(function(data) {
+      var loadItems = [];
+      loadItems = data.data.map(function(obj){
+        return {
+          value: obj.name.toLowerCase() + ' ' + obj.location.toLowerCase() + ' ' + obj.color.toLowerCase(),
+          display: obj.name
+        };
+      });
+      self.states = loadItems;
     });
   }
   /**
