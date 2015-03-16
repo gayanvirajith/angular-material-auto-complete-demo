@@ -14,6 +14,6 @@ Angular material design [Autocomplete](https://material.angularjs.org/#/demo/mat
 8. Configure database configuration on laravel.
 9. Issue following commands 
 	- `php artisan migrate`
-	- `php db:seed`
+	- `php artisan db:seed`
 10. Run grunt server  `grunt serve`
 11. Open [http://localhost:8000/](http://localhost:8000/) & enjoy.
