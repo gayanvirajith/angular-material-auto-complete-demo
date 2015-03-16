@@ -15,5 +15,5 @@ Angular material design [Autocomplete](https://material.angularjs.org/#/demo/mat
 9. Issue following commands 
 	- `php artisan migrate`
 	- `php artisan db:seed`
-10. Run grunt server  `grunt serve`
+10. Run grunt server  `grunt` (on Windows please user --forice flag)
 11. Open [http://localhost:8000/](http://localhost:8000/) & enjoy.
