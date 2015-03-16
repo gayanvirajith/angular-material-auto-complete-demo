@@ -9,8 +9,8 @@ Angular material design [Autocomplete](https://material.angularjs.org/#/demo/mat
 3. Install [Composer](https://getcomposer.org/)
 4. Navigate to your git cloned folder `cd {folder-name}`
 5. Install composer dependencies `composer install`.
-6. Install node dependencies 'npm install'.
-7. Install bower dependencies 'bower install'.
+6. Install node dependencies `npm install`.
+7. Install bower dependencies `bower install`.
 8. Configure database configuration on laravel.
 9. Issue following commands 
 	- `php artisan migrate`
