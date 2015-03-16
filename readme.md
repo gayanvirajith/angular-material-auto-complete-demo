@@ -1,6 +1,6 @@
 # Angular material - autocomplete demo
 
-Angular material design auto complete component with php laravel backend
+Angular material design [Autocomplete](https://material.angularjs.org/#/demo/material.components.autocomplete) component with php laravel backend.
 
 ## How to run/install
 
